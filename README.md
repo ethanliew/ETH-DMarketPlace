@@ -49,11 +49,35 @@ Use this as a reference to check your own work, or browse the code on your own. 
 
     Truffle requires the truffle.js file be named truffle-config on Windows machines. Feel free to delete the file that doesn't correspond to your platform.
 
+## NOTE
+
+Install and generate .babelrc
 
 https://www.npmjs.com/package/generate-babelrc#command-line-usage
 
-install babelrc generator 
-gen bablrc 
-> step 2 > es2015 + react > all stage devs
+```
+gen babelrc 
 
-install webpack
+```
+
+> pick step 2 
+> pick es2015 + react 
+> pick all stage devs
+
+
+.babelrc sample
+```
+{
+  "presets": ["es2015", "react", "stage-2"],
+  "env": {
+    "development": { "presets": ["stage-2", "es2015", "react"] },
+    "production": { "presets": ["stage-2", "es2015", "react"], "comments": false },
+    "test": { "presets": ["stage-2", "es2015", "react"], "comments": false }
+  }
+}
+
+```
+
+
+
+
